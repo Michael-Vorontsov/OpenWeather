@@ -61,6 +61,11 @@ final class RegionMapViewController: UIViewController, ViewControllerDataManagin
     }
   }
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    mapView.isZoomEnabled = false
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     reloadAnotations()
@@ -96,7 +101,6 @@ final class RegionMapViewController: UIViewController, ViewControllerDataManagin
   fileprivate func reloadAnotations() {
     mapView.removeAnnotations(mapView.annotations)
     mapView.addAnnotations(fetchedResultsController.fetchedObjects!)
-    mapView.showAnnotations(mapView.annotations, animated: true)
     
     if let selectedRegion = selectedRegion {
       mapView.selectAnnotation(selectedRegion, animated: true)
