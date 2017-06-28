@@ -63,7 +63,6 @@ final class RegionMapViewController: UIViewController, ViewControllerDataManagin
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    mapView.isZoomEnabled = false
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +74,6 @@ final class RegionMapViewController: UIViewController, ViewControllerDataManagin
     super.viewWillDisappear(animated)
     selectionHandler?(selectedRegion)
   }
-
   
   /*
    Fecth result controller helps to update ui on changes to Regions.

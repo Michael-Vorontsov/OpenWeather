@@ -335,6 +335,11 @@ fileprivate extension DataRetrivalManager {
     region.name = (regionInfo[consts.region.name] as? String)
     region.country = (regionInfo[consts.region.country] as? String)
     region.sid = (regionInfo[consts.region.sid] as? Int64) ?? 0
+    // Not all responses contains population
+    if let population = regionInfo[consts.region.population] as? Int64 {
+      region.population = population
+      
+    }
     region.lng = lng
     region.lat = lat
     if let oldForecasts = region.forecasts {
@@ -384,6 +389,7 @@ private let consts = (
     key : "city",
     sid : "id",
     name : "name",
+    population : "population",
     country : "country",
     location : (
       key : "coord",

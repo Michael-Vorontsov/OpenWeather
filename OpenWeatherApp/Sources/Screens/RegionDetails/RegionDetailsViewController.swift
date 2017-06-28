@@ -24,14 +24,24 @@ protocol RegionSelecting: class {
 final class RegionDetailsViewController: UITableViewController, ViewControllerDataManaging {
   
   var dataManager: DataRetrivalManager!
+  @IBOutlet
+  private weak var headerView: UIView!
+
+  @IBOutlet
+  private weak var populationLabel: UILabel!
+  
+  @IBOutlet
+  private weak var countryLabel: UILabel!
   
   //MARK: - Public overrides
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    refreshControl?.addTarget(self, action: #selector(reloadSelectedRegion), for: .valueChanged)
+    tableView.tableHeaderView = headerView
+    
     // remove table view segments after last cell
-    self.refreshControl?.addTarget(self, action: #selector(reloadSelectedRegion), for: .valueChanged)
-    self.tableView.tableFooterView = UIView()
+    tableView.tableFooterView = UIView()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -80,8 +90,14 @@ final class RegionDetailsViewController: UITableViewController, ViewControllerDa
         self.fetchedResultsController?.fetchRequest.predicate = createPredicateForCurretRegion()
       } else {
         self.fetchedResultsController?.fetchRequest.predicate = createPredicateForRegion(region: selectedRegion)
-        
       }
+      if selectedRegion.population > 0 {
+        populationLabel.text = String(describing: selectedRegion.population)
+      } else {
+        populationLabel.text = consts.unknown.localize()
+      }
+      countryLabel.text = selectedRegion.country
+
       self.title = title
     }
   }
@@ -253,7 +269,7 @@ extension RegionDetailsViewController: UICollectionViewDelegate, UICollectionVie
 private let consts = (
   placeholderIcon : "00",
   pending : "Pending",
-  
+  unknown : "unknown",
   predicates : (
     current : "region.isCurrent == %@",
     selected : "region.sid == %i"

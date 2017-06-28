@@ -133,8 +133,46 @@
                             </fragment>
                         </attributedString>
                     </refreshControl>
+                    <connections>
+                        <outlet property="countryLabel" destination="GUM-A6-NED" id="Wag-iB-X1k"/>
+                        <outlet property="headerView" destination="s8y-ql-zQD" id="XeF-nm-xRE"/>
+                        <outlet property="populationLabel" destination="a6c-ey-Bw4" id="OzU-wt-QF0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMO-c7-GYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="s8y-ql-zQD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Population" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIT-y8-DUm">
+                            <rect key="frame" x="8" y="8" width="73" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Population&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6c-ey-Bw4">
+                            <rect key="frame" x="8" y="34" width="102.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Country&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUM-A6-NED">
+                            <rect key="frame" x="244.5" y="15" width="115.5" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="GUM-A6-NED" firstAttribute="top" secondItem="s8y-ql-zQD" secondAttribute="top" constant="15" id="5ug-f6-zV7"/>
+                        <constraint firstAttribute="trailing" secondItem="GUM-A6-NED" secondAttribute="trailing" constant="15" id="6V8-OU-0pY"/>
+                        <constraint firstItem="a6c-ey-Bw4" firstAttribute="top" secondItem="oIT-y8-DUm" secondAttribute="bottom" constant="8" id="FIq-cu-wt4"/>
+                        <constraint firstItem="oIT-y8-DUm" firstAttribute="top" secondItem="s8y-ql-zQD" secondAttribute="top" constant="8" id="KbO-Yk-wuE"/>
+                        <constraint firstItem="a6c-ey-Bw4" firstAttribute="leading" secondItem="s8y-ql-zQD" secondAttribute="leading" constant="8" id="VwK-sV-e82"/>
+                        <constraint firstItem="oIT-y8-DUm" firstAttribute="leading" secondItem="s8y-ql-zQD" secondAttribute="leading" constant="8" id="hD7-oU-vmZ"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="1242.4000000000001" y="297.30134932533736"/>
         </scene>
