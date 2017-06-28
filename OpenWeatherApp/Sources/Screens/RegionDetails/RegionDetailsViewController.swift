@@ -30,7 +30,7 @@ final class RegionDetailsViewController: UITableViewController, ViewControllerDa
   override func viewDidLoad() {
     super.viewDidLoad()
     // remove table view segments after last cell
-    self.refreshControl?.addTarget(self, action: #selector(reloadSelectedRegion), for: .allEvents)
+    self.refreshControl?.addTarget(self, action: #selector(reloadSelectedRegion), for: .valueChanged)
     self.tableView.tableFooterView = UIView()
   }
   
@@ -124,15 +124,18 @@ final class RegionDetailsViewController: UITableViewController, ViewControllerDa
   }
   
   func reloadSelectedRegion() {
-    if refreshControl?.isRefreshing == false {
-      refreshControl?.beginRefreshing()
+    if let refreshControl = refreshControl, refreshControl.isRefreshing == false {
+      refreshControl.beginRefreshing()
+      tableView.scrollRectToVisible(refreshControl.frame, animated: false)
     }
     let comletionHandler: RegionRequestResultBlock = { ( region, error) in
-      self.refreshControl?.endRefreshing()
-      self.selectedRegion = region
-      if nil != error {
+      if let region = region {
+        self.selectedRegion = region
+      }
+      if let error = error {
         self.showErrorAlert(error: error)
       }
+      self.refreshControl?.endRefreshing()
     }
     
     if let selectedRegion = selectedRegion {

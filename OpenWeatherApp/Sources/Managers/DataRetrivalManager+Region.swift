@@ -117,7 +117,7 @@ extension DataRetrivalManager: RegionForecastRetriving {
     let completionOperation = BlockOperation {
       
       // Get first error from buffer to report
-      let firstError = errorBuffer.firstObject as? Error
+      let firstError = errorBuffer.firstObject as? OperationError
       
       // Try to fetch object in main thread
       if
@@ -301,7 +301,7 @@ extension DataRetrivalManager: RegionForecastRetriving {
     let completionOperation = BlockOperation {
       
       // Get first error from buffer to report
-      let firstError = errorBuffer.firstObject as? Error
+      let firstError = errorBuffer.firstObject as? OperationError
       
       // Try to fetch object in main thread
       if

@@ -15,8 +15,14 @@
 		D0066E951F032CA4008F91A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0066E8F1F032CA4008F91A5 /* Main.storyboard */; };
 		D0066E961F032CA4008F91A5 /* OpenWeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0066E911F032CA4008F91A5 /* OpenWeatherApp.xcdatamodeld */; };
 		D0066E981F032F19008F91A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066E971F032F19008F91A5 /* AppDelegate.swift */; };
-		D01193DC1F023F1E0063D119 /* OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01193DB1F023F1E0063D119 /* OperationError.swift */; };
-		D01193E01F0257FE0063D119 /* RegionByIdRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01193DF1F0257FE0063D119 /* RegionByIdRequestOperation.swift */; };
+		D0066EA31F039412008F91A5 /* CurrentCoordinateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066E9A1F039412008F91A5 /* CurrentCoordinateOperation.swift */; };
+		D0066EA41F039412008F91A5 /* ManagedObjectParseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066E9B1F039412008F91A5 /* ManagedObjectParseOperation.swift */; };
+		D0066EA51F039412008F91A5 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066E9C1F039412008F91A5 /* NetworkOperation.swift */; };
+		D0066EA61F039412008F91A5 /* OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066E9D1F039412008F91A5 /* OperationError.swift */; };
+		D0066EA71F039412008F91A5 /* ParseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066E9E1F039412008F91A5 /* ParseOperation.swift */; };
+		D0066EA81F039412008F91A5 /* SerializationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066E9F1F039412008F91A5 /* SerializationOperation.swift */; };
+		D0066EA91F039412008F91A5 /* RegionByIdRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066EA11F039412008F91A5 /* RegionByIdRequestOperation.swift */; };
+		D0066EAA1F039412008F91A5 /* RegionByLocationRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0066EA21F039412008F91A5 /* RegionByLocationRequestOperation.swift */; };
 		D01193E21F0259A40063D119 /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01193E11F0259A40063D119 /* Dictionary+HTTPParameters.swift */; };
 		D01193E41F025B8A0063D119 /* RegionByIdRequestOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01193E31F025B8A0063D119 /* RegionByIdRequestOperationTests.swift */; };
 		D01193E71F0268E90063D119 /* RegionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01193E61F0268E90063D119 /* RegionDetailsViewController.swift */; };
@@ -25,22 +31,16 @@
 		D01193F11F02C1290063D119 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01193F01F02C1290063D119 /* String+Localization.swift */; };
 		D04C03251F016DB800CA6D80 /* DataRetrivalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C03241F016DB800CA6D80 /* DataRetrivalManager.swift */; };
 		D04C03271F016E2100CA6D80 /* DataRetrivalManager+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C03261F016E2100CA6D80 /* DataRetrivalManager+Region.swift */; };
-		D04C03291F0170DF00CA6D80 /* CurrentCoordinateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C03281F0170DF00CA6D80 /* CurrentCoordinateOperation.swift */; };
 		D04C032D1F0174A200CA6D80 /* Operation+AsyncReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C032C1F0174A200CA6D80 /* Operation+AsyncReporting.swift */; };
 		D04C032F1F01769800CA6D80 /* CurrentLocationOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C032E1F01769800CA6D80 /* CurrentLocationOperationTests.swift */; };
 		D04C03321F017D1D00CA6D80 /* DataRetrivalManager+RegionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C03311F017D1D00CA6D80 /* DataRetrivalManager+RegionTests.swift */; };
-		D04C03341F01807A00CA6D80 /* RegionByLocationRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C03331F01807A00CA6D80 /* RegionByLocationRequestOperation.swift */; };
 		D04C03361F01A63600CA6D80 /* RegionByLocationRequestOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C03351F01A63600CA6D80 /* RegionByLocationRequestOperationTests.swift */; };
 		D04C03391F01BE3F00CA6D80 /* GenericMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C03381F01BE3F00CA6D80 /* GenericMapper.swift */; };
 		D04C033B1F01BE6B00CA6D80 /* BlockMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04C033A1F01BE6B00CA6D80 /* BlockMapper.swift */; };
 		D0DDEF621F005480005FBF3F /* OpenWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF611F005480005FBF3F /* OpenWeatherAppUITests.swift */; };
-		D0DDEF781F00F974005FBF3F /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF771F00F974005FBF3F /* NetworkOperation.swift */; };
 		D0DDEF901F010E0E005FBF3F /* NetworkOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF8F1F010E0E005FBF3F /* NetworkOperationTests.swift */; };
-		D0DDEF921F012C89005FBF3F /* SerializationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF911F012C89005FBF3F /* SerializationOperation.swift */; };
 		D0DDEF941F012F81005FBF3F /* SerializationOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF931F012F81005FBF3F /* SerializationOperationTests.swift */; };
-		D0DDEF961F013A88005FBF3F /* ParseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF951F013A88005FBF3F /* ParseOperation.swift */; };
 		D0DDEF981F013BC5005FBF3F /* ParseOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF971F013BC5005FBF3F /* ParseOperationTests.swift */; };
-		D0DDEF9A1F014BDA005FBF3F /* ManagedObjectParseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF991F014BDA005FBF3F /* ManagedObjectParseOperation.swift */; };
 		D0DDEF9E1F01556E005FBF3F /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEF9C1F01556E005FBF3F /* TestModel.xcdatamodeld */; };
 		D0DDEFA51F015601005FBF3F /* ManagedObjectParseOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDEFA41F015601005FBF3F /* ManagedObjectParseOperationTests.swift */; };
 /* End PBXBuildFile section */
@@ -71,8 +71,14 @@
 		D0066E901F032CA4008F91A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0066E921F032CA4008F91A5 /* OpenWeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenWeatherApp.xcdatamodel; sourceTree = "<group>"; };
 		D0066E971F032F19008F91A5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D01193DB1F023F1E0063D119 /* OperationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationError.swift; path = ../OperationError.swift; sourceTree = "<group>"; };
-		D01193DF1F0257FE0063D119 /* RegionByIdRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionByIdRequestOperation.swift; sourceTree = "<group>"; };
+		D0066E9A1F039412008F91A5 /* CurrentCoordinateOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCoordinateOperation.swift; sourceTree = "<group>"; };
+		D0066E9B1F039412008F91A5 /* ManagedObjectParseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectParseOperation.swift; sourceTree = "<group>"; };
+		D0066E9C1F039412008F91A5 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		D0066E9D1F039412008F91A5 /* OperationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationError.swift; sourceTree = "<group>"; };
+		D0066E9E1F039412008F91A5 /* ParseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseOperation.swift; sourceTree = "<group>"; };
+		D0066E9F1F039412008F91A5 /* SerializationOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationOperation.swift; sourceTree = "<group>"; };
+		D0066EA11F039412008F91A5 /* RegionByIdRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionByIdRequestOperation.swift; sourceTree = "<group>"; };
+		D0066EA21F039412008F91A5 /* RegionByLocationRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionByLocationRequestOperation.swift; sourceTree = "<group>"; };
 		D01193E11F0259A40063D119 /* Dictionary+HTTPParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPParameters.swift"; sourceTree = "<group>"; };
 		D01193E31F025B8A0063D119 /* RegionByIdRequestOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionByIdRequestOperationTests.swift; sourceTree = "<group>"; };
 		D01193E61F0268E90063D119 /* RegionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionDetailsViewController.swift; sourceTree = "<group>"; };
@@ -81,11 +87,9 @@
 		D01193F01F02C1290063D119 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		D04C03241F016DB800CA6D80 /* DataRetrivalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRetrivalManager.swift; sourceTree = "<group>"; };
 		D04C03261F016E2100CA6D80 /* DataRetrivalManager+Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRetrivalManager+Region.swift"; sourceTree = "<group>"; };
-		D04C03281F0170DF00CA6D80 /* CurrentCoordinateOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCoordinateOperation.swift; sourceTree = "<group>"; };
 		D04C032C1F0174A200CA6D80 /* Operation+AsyncReporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operation+AsyncReporting.swift"; sourceTree = "<group>"; };
 		D04C032E1F01769800CA6D80 /* CurrentLocationOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLocationOperationTests.swift; sourceTree = "<group>"; };
 		D04C03311F017D1D00CA6D80 /* DataRetrivalManager+RegionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRetrivalManager+RegionTests.swift"; sourceTree = "<group>"; };
-		D04C03331F01807A00CA6D80 /* RegionByLocationRequestOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionByLocationRequestOperation.swift; sourceTree = "<group>"; };
 		D04C03351F01A63600CA6D80 /* RegionByLocationRequestOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionByLocationRequestOperationTests.swift; sourceTree = "<group>"; };
 		D04C03381F01BE3F00CA6D80 /* GenericMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericMapper.swift; sourceTree = "<group>"; };
 		D04C033A1F01BE6B00CA6D80 /* BlockMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockMapper.swift; sourceTree = "<group>"; };
@@ -96,13 +100,9 @@
 		D0DDEF5D1F005480005FBF3F /* OpenWeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DDEF611F005480005FBF3F /* OpenWeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAppUITests.swift; sourceTree = "<group>"; };
 		D0DDEF631F005480005FBF3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0DDEF771F00F974005FBF3F /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		D0DDEF8F1F010E0E005FBF3F /* NetworkOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperationTests.swift; sourceTree = "<group>"; };
-		D0DDEF911F012C89005FBF3F /* SerializationOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationOperation.swift; sourceTree = "<group>"; };
 		D0DDEF931F012F81005FBF3F /* SerializationOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationOperationTests.swift; sourceTree = "<group>"; };
-		D0DDEF951F013A88005FBF3F /* ParseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseOperation.swift; sourceTree = "<group>"; };
 		D0DDEF971F013BC5005FBF3F /* ParseOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseOperationTests.swift; sourceTree = "<group>"; };
-		D0DDEF991F014BDA005FBF3F /* ManagedObjectParseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectParseOperation.swift; sourceTree = "<group>"; };
 		D0DDEF9D1F01556E005FBF3F /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		D0DDEFA41F015601005FBF3F /* ManagedObjectParseOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectParseOperationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +149,28 @@
 				D0066E911F032CA4008F91A5 /* OpenWeatherApp.xcdatamodeld */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D0066E991F039412008F91A5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D0066E9A1F039412008F91A5 /* CurrentCoordinateOperation.swift */,
+				D0066E9B1F039412008F91A5 /* ManagedObjectParseOperation.swift */,
+				D0066E9C1F039412008F91A5 /* NetworkOperation.swift */,
+				D0066E9D1F039412008F91A5 /* OperationError.swift */,
+				D0066E9E1F039412008F91A5 /* ParseOperation.swift */,
+				D0066E9F1F039412008F91A5 /* SerializationOperation.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D0066EA01F039412008F91A5 /* Specialized */ = {
+			isa = PBXGroup;
+			children = (
+				D0066EA11F039412008F91A5 /* RegionByIdRequestOperation.swift */,
+				D0066EA21F039412008F91A5 /* RegionByLocationRequestOperation.swift */,
+			);
+			path = Specialized;
 			sourceTree = "<group>";
 		};
 		D01193E51F0268A50063D119 /* RegionDetails */ = {
@@ -281,25 +303,10 @@
 		D0DDEF751F00F8D4005FBF3F /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				D0DDEF761F00F8E9005FBF3F /* Base */,
-				D04C03281F0170DF00CA6D80 /* CurrentCoordinateOperation.swift */,
-				D04C03331F01807A00CA6D80 /* RegionByLocationRequestOperation.swift */,
-				D01193DF1F0257FE0063D119 /* RegionByIdRequestOperation.swift */,
+				D0066E991F039412008F91A5 /* Common */,
+				D0066EA01F039412008F91A5 /* Specialized */,
 			);
 			path = Operations;
-			sourceTree = "<group>";
-		};
-		D0DDEF761F00F8E9005FBF3F /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				D01193DB1F023F1E0063D119 /* OperationError.swift */,
-				D0DDEF771F00F974005FBF3F /* NetworkOperation.swift */,
-				D0DDEF911F012C89005FBF3F /* SerializationOperation.swift */,
-				D0DDEF951F013A88005FBF3F /* ParseOperation.swift */,
-				D0DDEF991F014BDA005FBF3F /* ManagedObjectParseOperation.swift */,
-			);
-			name = Base;
-			path = Abstract;
 			sourceTree = "<group>";
 		};
 		D0DDEF8C1F010DBE005FBF3F /* Sources */ = {
@@ -479,27 +486,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0066E961F032CA4008F91A5 /* OpenWeatherApp.xcdatamodeld in Sources */,
-				D01193DC1F023F1E0063D119 /* OperationError.swift in Sources */,
-				D04C03291F0170DF00CA6D80 /* CurrentCoordinateOperation.swift in Sources */,
-				D01193E01F0257FE0063D119 /* RegionByIdRequestOperation.swift in Sources */,
 				D01193E71F0268E90063D119 /* RegionDetailsViewController.swift in Sources */,
-				D0DDEF781F00F974005FBF3F /* NetworkOperation.swift in Sources */,
+				D0066EA41F039412008F91A5 /* ManagedObjectParseOperation.swift in Sources */,
 				D0066E881F02E64B008F91A5 /* UIViewController+ErrorAlert.swift in Sources */,
+				D0066EA81F039412008F91A5 /* SerializationOperation.swift in Sources */,
 				D01193E91F026E6A0063D119 /* CarouselTableViewCell.swift in Sources */,
-				D0DDEF921F012C89005FBF3F /* SerializationOperation.swift in Sources */,
-				D0DDEF9A1F014BDA005FBF3F /* ManagedObjectParseOperation.swift in Sources */,
+				D0066EAA1F039412008F91A5 /* RegionByLocationRequestOperation.swift in Sources */,
+				D0066EA61F039412008F91A5 /* OperationError.swift in Sources */,
 				D04C033B1F01BE6B00CA6D80 /* BlockMapper.swift in Sources */,
+				D0066EA71F039412008F91A5 /* ParseOperation.swift in Sources */,
 				D01193E21F0259A40063D119 /* Dictionary+HTTPParameters.swift in Sources */,
 				D01193F11F02C1290063D119 /* String+Localization.swift in Sources */,
 				D01193EB1F029D8D0063D119 /* CollectionViewCell.swift in Sources */,
 				D04C03251F016DB800CA6D80 /* DataRetrivalManager.swift in Sources */,
-				D0DDEF961F013A88005FBF3F /* ParseOperation.swift in Sources */,
 				D0066E861F02CD7B008F91A5 /* RegionMapViewController.swift in Sources */,
 				D04C03271F016E2100CA6D80 /* DataRetrivalManager+Region.swift in Sources */,
 				D04C032D1F0174A200CA6D80 /* Operation+AsyncReporting.swift in Sources */,
 				D0066E8A1F0305A4008F91A5 /* NSManagedObjectContext+SaveRecursive.swift in Sources */,
-				D04C03341F01807A00CA6D80 /* RegionByLocationRequestOperation.swift in Sources */,
 				D04C03391F01BE3F00CA6D80 /* GenericMapper.swift in Sources */,
+				D0066EA91F039412008F91A5 /* RegionByIdRequestOperation.swift in Sources */,
+				D0066EA31F039412008F91A5 /* CurrentCoordinateOperation.swift in Sources */,
+				D0066EA51F039412008F91A5 /* NetworkOperation.swift in Sources */,
 				D0066E981F032F19008F91A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
