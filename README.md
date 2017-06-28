@@ -1,6 +1,6 @@
-#OpenWeatherApp#
+# OpenWeatherApp
 
-#Solution Manual#
+## Solution Manual
 
 After launch user able to see weather forecast for current location (User will be asked to allow application to track location) . 
 
@@ -16,7 +16,7 @@ At callout view of selected region user able to see icon of nearest forecast. Al
 
 Back button navigate to details of selected region.  If no region was selected, current region will be requested.
 
-#Imlementation details#
+## Imlementation details
 
 DataRetrivalManager responsible for handling all application specific data. It use operation chain to fetch and process data from network.
 
@@ -24,7 +24,7 @@ Each operation had limited responsibilities.
 
 As all operations had to be initialized at once, before completion of others dependent operations, accumulator buffers used to share information and data between them.
 
-#Unit tests#
+## Unit tests
 
 Application supplied with unit tests to cover data requesting and parsing. 
 
