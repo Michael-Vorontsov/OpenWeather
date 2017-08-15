@@ -23,10 +23,11 @@ class CurrentLocationOperationTests: XCTestCase {
     super.setUp()
     queue = OperationQueue()
     collection = NSMutableArray()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
   }
   
   func testSuccessOperation() {
+    // Test depends on permition granted by user to use geolocation.
+    // It will fail if user permit using geolocation for app.
     
     // Prepare
     

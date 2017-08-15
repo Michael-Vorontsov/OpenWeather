@@ -24,6 +24,9 @@ final class CurrentLocationOperation: Operation {
   private(set) var container: NSMutableArray?
   var currentLocation: CLLocation? = nil
   
+  
+  override var isAsynchronous: Bool { return true }
+  
   override var isFinished: Bool {
     return isCancelled || currentLocation != nil || error != nil
   }
@@ -31,7 +34,18 @@ final class CurrentLocationOperation: Operation {
   override var isExecuting: Bool {
     return !isCancelled && locationManager != nil && error == nil
   }
-
+  
+  override func cancel() {
+    self.willChangeValue(forKey: "isFinished")
+    self.willChangeValue(forKey: "isExecuting")
+    locationManager?.stopUpdatingLocation()
+    locationManager?.delegate = nil
+    locationManager = nil
+    super.cancel()
+    self.didChangeValue(forKey: "isFinished")
+    self.didChangeValue(forKey: "isExecuting")
+  }
+  
   override func start() {
     
     guard !isCancelled else { return }
@@ -43,9 +57,9 @@ final class CurrentLocationOperation: Operation {
         return
       }
     }
-
+    
     // LocationManager had to be initiated at main thread
-    DispatchQueue.main.sync {
+    DispatchQueue.main.async {
       let locationManager = CLLocationManager()
       locationManager.delegate = self
       self.locationManager = locationManager
@@ -54,14 +68,14 @@ final class CurrentLocationOperation: Operation {
       defer { self.reportExecutingChanged() }
       locationManager.startUpdatingLocation()
     }
-
+    
   }
   
   init(container: NSMutableArray?, errorBuffer: NSMutableArray? = nil) {
     self.container = container
     self.errorBuffer = errorBuffer
   }
-
+  
 }
 
 extension CurrentLocationOperation: CLLocationManagerDelegate {
@@ -85,11 +99,11 @@ extension CurrentLocationOperation: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     // If location manager forbdden - cancell operation and report error
     switch status {
-      case .denied, .notDetermined, .restricted:
-        self.error = OperationError.geolocationError
-        cancel()
-      default:
-        break;
+    case .denied, .restricted:
+      self.error = OperationError.geolocationError
+      cancel()
+    default:
+      break;
     }
   }
   
@@ -107,5 +121,5 @@ extension CurrentLocationOperation: CLLocationManagerDelegate {
     self.error = OperationError.geolocationError
     cancel()
   }
-
+  
 }

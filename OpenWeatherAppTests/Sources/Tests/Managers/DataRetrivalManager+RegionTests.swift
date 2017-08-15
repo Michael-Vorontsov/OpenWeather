@@ -47,6 +47,9 @@ class DataRetrivalManager_RegionTests: XCTestCase {
   
   func testRetiveCurrentRegion() {
     
+    // Test depends on permition granted by user to use geolocation.
+    // It will fail if user permit using geolocation for app.
+
     // Prepare
     let manager = DataRetrivalManager(
       endpoint: consts.endpoint,

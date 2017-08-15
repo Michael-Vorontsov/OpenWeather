@@ -15,14 +15,19 @@ extension UIViewController {
    
    Message is very general, and same for any error.
    */
-  func showErrorAlert(error: Error?)  {
+  func showErrorAlert(error: Error?) {
     let alert = UIAlertController(
       title: consts.title.localize(),
-      message: consts.message.localize(),
-      preferredStyle: .alert
-    )
-    alert.addAction(UIAlertAction(title: consts.ok.localize(), style: .cancel) { _ in})
-    self.present(alert, animated: true, completion: nil)
+      message: error?.localizedDescription ?? consts.message.localize(),
+      preferredStyle: .alert)
+    alert.addAction(
+      UIAlertAction(title: consts.ok.localize(), style: .cancel) { _ in
+        alert.dismiss(animated: true, completion: nil)
+    })
+    // Postpone modal presentation to allow UI to react naturally.
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+      self.present(alert, animated: true, completion: nil)
+    }
   }
 
 }
