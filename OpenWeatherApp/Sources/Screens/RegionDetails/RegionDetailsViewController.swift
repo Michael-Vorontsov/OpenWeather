@@ -24,6 +24,9 @@ protocol RegionSelecting: class {
 final class RegionDetailsViewController: UITableViewController, ViewControllerDataManaging {
   
   var dataManager: DataRetrivalManager!
+  
+  private var offsets = [Int : CGFloat]()
+
   @IBOutlet
   private weak var headerView: UIView!
 
@@ -37,6 +40,7 @@ final class RegionDetailsViewController: UITableViewController, ViewControllerDa
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    selectedRegion = nil
     refreshControl?.addTarget(self, action: #selector(reloadSelectedRegion), for: .valueChanged)
     tableView.tableHeaderView = headerView
     
@@ -81,6 +85,8 @@ final class RegionDetailsViewController: UITableViewController, ViewControllerDa
       
       guard let selectedRegion = selectedRegion, var title = selectedRegion.name else {
         self.title = consts.pending.localize()
+        populationLabel.text = nil
+        countryLabel.text = nil
         self.fetchedResultsController?.fetchRequest.predicate = createPredicateForCurretRegion()
         return
       }
@@ -91,6 +97,7 @@ final class RegionDetailsViewController: UITableViewController, ViewControllerDa
       } else {
         self.fetchedResultsController?.fetchRequest.predicate = createPredicateForRegion(region: selectedRegion)
       }
+      
       if selectedRegion.population > 0 {
         populationLabel.text = String(describing: selectedRegion.population)
       } else {
@@ -197,6 +204,9 @@ final class RegionDetailsViewController: UITableViewController, ViewControllerDa
   override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     guard let tableViewCell = cell as? CarouselTableViewCell else { return }
     
+    let offset = offsets[indexPath.row] ?? 0.0
+    tableViewCell.scrollOffset = offset
+
     tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
     
     
@@ -210,6 +220,13 @@ final class RegionDetailsViewController: UITableViewController, ViewControllerDa
     if let sectionDate = (sectionInfo.objects?.first as? Forecast)?.day {
       tableViewCell.dateLabel.text = dateFormatter.string(from: sectionDate as Date)
     }
+  }
+  
+  override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    guard let cell = cell as? CarouselTableViewCell else { return }
+    
+    let offset = cell.scrollOffset
+    self.offsets[indexPath.row] = offset
   }
   
 }

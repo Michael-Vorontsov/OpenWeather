@@ -16,6 +16,20 @@ class CarouselTableViewCell: UITableViewCell {
   @IBOutlet
   private weak var collectionView: UICollectionView!
   
+  /**
+    Allows to setup horizontal offset for specific carousel
+   */
+  var scrollOffset: CGFloat {
+    set {
+      var offset = collectionView.contentOffset
+      offset.x = newValue
+      collectionView.contentOffset = offset
+    }
+    get {
+      return collectionView.contentOffset.x
+    }
+  }
+
   func setCollectionViewDataSourceDelegate
     <DelegateAndDatasource: UICollectionViewDataSource & UICollectionViewDelegate>(
     _ dataSourceDelegate: DelegateAndDatasource,
