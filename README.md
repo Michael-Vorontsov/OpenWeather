@@ -24,6 +24,10 @@ Each operation had limited responsibilities.
 
 As all operations had to be initialized at once, before completion of others dependent operations, accumulator buffers used to share information and data between them.
 
+About 10 hours was spend to implement that solution. 
+
+> Please mind that same task was give by several different companies, so same solution had bee given to them all, so time of files created can be earlier then task was given. 
+
 ## Unit tests
 
 Application supplied with unit tests to cover data requesting and parsing. 
